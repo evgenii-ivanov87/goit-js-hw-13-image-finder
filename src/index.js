@@ -1,11 +1,11 @@
+import '../src/styles.css';
 import articlesTpl from './templates/articles.hbs';
-import './css/common.css';
 import NewsApiService from './js/news-service';
 import LoadMoreBtn from './js/components/load-more-btn';
 
 const refs = {
   searchForm: document.querySelector('.js-search-form'),
-  articlesContainer: document.querySelector('.js-articles-container'),
+  articlesContainer: document.querySelector('.js-gallery-container'),
 };
 const loadMoreBtn = new LoadMoreBtn({
   selector: '[data-action="load-more"]',

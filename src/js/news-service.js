@@ -1,5 +1,5 @@
-const API_KEY = '4330ebfabc654a6992c2aa792f3173a3';
-const BASE_URL = 'https://newsapi.org/v2';
+const API_KEY = '19812915-5ef4e3fab5142faeb0fc408e1';
+const BASE_URL = 'https://pixabay.com/api/';
 const options = {
   headers: {
     Authorization: API_KEY,
@@ -13,9 +13,8 @@ export default class NewsApiService {
   }
 
   fetchArticles() {
-    const url = `${BASE_URL}/everything?q=${this.searchQuery}&language=en&pageSize=5&page=${this.page}`;
-
-    return fetch(url, options)
+    const url = `${BASE_URL}/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12`
+        return fetch(url, options)
       .then(response => response.json())
       .then(({ articles }) => {
         this.incrementPage();
